@@ -1,73 +1,56 @@
+require("dotenv").config(); // Ensure dotenv is loaded
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const morgan = require("morgan");
-const bcrypt = require("bcrypt"); // Add this line
+const bcrypt = require("bcrypt"); 
 const multer = require("multer");
-// const { ObjectId } = require("mongoose"); 
 const path = require("path");
 const fs = require('fs');
-const Grid = require("gridfs-stream");
-// const multerGridfsStorage = require('multer-gridfs-storage'); 
-// const gridfsStream = require("gridfs-stream");
-const { MongoClient } = require("mongodb");
 const bodyParser = require('body-parser');
-require("dotenv").config();
+const { MongoClient } = require("mongodb");
 const addDefaultUser = require("./addDefaultUser"); 
 const User = require("./models/User");
 const jwt = require("jsonwebtoken");
 
-
-const secretKey = "thalaforareason";
+// Load environment variables from the .env file
+const mongoURI = process.env.MONGO_URI; 
+const jwtSecret = process.env.JWT_SECRET; 
+const PORT = process.env.PORT || 8080; 
 
 const uploadDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true }); // Create the directory if it doesn't exist
 }
 
-
 const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
-const mongoURI = "mongodb://127.0.0.1:27017/costdb"; // Replace with your actual MongoDB URI
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-MongoClient.connect(mongoURI, { useUnifiedTopology: true })
-  .then((client) => {
-    // const db = client.db("costdb");
-    // const bucket = new mongoose.mongo.GridFSBucket(db, {
-    //   bucketName: "uploads", 
-    // });
-
-    // Ensure that your file upload process integrates with GridFS properly
+// MongoDB Connection using MONGO_URI from the .env file
+mongoose
+  .connect(mongoURI) // Connection URI
+  .then(async () => {
+    console.log("MongoDB connected");
+    // Call the function to add the default user
+    await addDefaultUser();
   })
-  .catch((error) => {
-    console.error("MongoDB notes connection error:", error);
-  });
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
+
+
+// Start Server
+
+
 
 
 // const conn = mongoose.createConnection(mongoURI);
 let gfs;
 
-
-// MongoDB Connection
-mongoose
-  .connect("mongodb://127.0.0.1:27017/costdb") // Connection URI
-  .then(async () => {
-    console.log("MongoDB connected");
-
-    // Once connected, initialize GridFS
-    const conn = mongoose.connection;
-    gfs = Grid(conn.db, mongoose.mongo); // Use the connected db object for GridFS
-    gfs.collection("uploads"); // Name of the collection for files
-
-    // Call the function to add the default user
-    await addDefaultUser();
-  })
-  .catch((err) => console.error("Error connecting to MongoDB:", err));
 
   
   // API: User Registration
@@ -677,7 +660,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start Server
-const PORT = 8080;
+
 app.listen(PORT, () => {
   console.log(`[DEBUG] Server running on port ${PORT}`);
 });
