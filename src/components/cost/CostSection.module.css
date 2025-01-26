@@ -1,0 +1,40 @@
+.tableContainer{
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    
+  }
+  h2{
+    margin-top: 20px;
+  }
+  
+  
+  .tableContainer th,
+  .tableContainer td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: right; /* Align numbers to the right */
+    
+  }
+  
+  .tableContainer th {
+    background-color: #ffdbaa;
+    
+    font-weight: bold;
+  }
+  
+  .tableContainer td {
+    text-align: right; /* Align numeric values properly */
+  }
+  
+  .tableContainer .textLeft{
+    text-align: left; /* Align text columns to the left */
+  }
+  @media (max-width: 991px){
+      
+    
+      .tableContainer{
+        width: 100%;
+      }
+
+  }

@@ -1,0 +1,29 @@
+.featureCard {
+    border-radius: 30px;
+    background-color: rgba(255, 219, 170, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 59px 26px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    cursor: pointer;
+  }
+  
+  .featureIcon {
+    aspect-ratio: 1.04;
+    object-fit: contain;
+    width: 52px;
+  }
+  
+  .featureTitle {
+    font: 300 32px Inter, sans-serif;
+    margin-top: 29px;
+    color: rgba(0, 0, 0, 1);
+  }
+  
+  @media (max-width: 991px) {
+    .featureCard {
+      margin-top: 31px;
+      padding-left: 20px;
+    }
+  }

@@ -1,0 +1,128 @@
+.employeeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color:#f4f2f1 ; /* Same background color as header */
+}
+
+.photo, .details, .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo {
+  flex: 1;
+  justify-content: flex-start; /* Align photo to the left */
+}
+
+.employeeRow .details {
+  flex: 2;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 8px;
+  border-radius: 8px;
+  margin: 3px;
+  /* background-color: #ecded0; Same background color as employee header */
+}
+
+.actions {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.userIcon {
+  font-size: 30px;
+  color: #aaa;
+}
+
+.editIcon, .deleteIcon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.editIcon:hover, .deleteIcon:hover {
+  color: #e76f51;
+}
+
+.editButton {
+  font-size: 16px;
+  color: #f4a261;  /* Light orange color */
+  background-color: #fff2e6; /* Light background for Edit */
+  padding: 6px 12px;
+  border: 1px solid #f4a261;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  font-size: 16px;
+  color: #e76f51; /* Darker red-orange for Delete */
+  background-color: #ffe6e6; /* Light background for Delete */
+  padding: 6px 12px;
+  border: 1px solid #e76f51;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#employeeHeader {
+  background-color: #FFDBAA; /* Same color as employee details */
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .employeeRow {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    gap: 10px;
+    background-color: #FFDBAA; /* Matching background for mobile as well */
+  }
+
+  .photo {
+    flex: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .details {
+    flex: none;
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #FFDBAA; /* Matching background for mobile */
+  }
+
+  .actions {
+    flex: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .userIcon {
+    font-size: 40px;
+  }
+
+  .editIcon, .deleteIcon {
+    font-size: 28px;
+  }
+
+  #employeeHeader {
+    display: none;
+  }
+}

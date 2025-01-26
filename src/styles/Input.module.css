@@ -1,0 +1,49 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 35px 0 0 23px;
+  }
+  
+  .inputLabel {
+    font-size: 40px;
+    color: rgba(0, 0, 0, 1);
+    font-family: Roboto, sans-serif;
+  }
+  
+  .inputField {
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 5px 8px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 28px;
+    font-size: 36px;
+    color: rgba(217, 217, 217, 1);
+    padding: 25px 23px;
+    width: 100%;
+    border: none;
+  }
+  
+  .passwordContainer {
+    position: relative;
+  }
+  
+  .passwordIcon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 36px;
+    position: absolute;
+    right: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  @media (max-width: 991px) {
+    .inputContainer {
+      margin-left: 10px;
+    }
+    
+    .inputField {
+      max-width: 100%;
+      padding-right: 20px;
+    }
+  }

@@ -1,0 +1,173 @@
+.eventsContainer {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo {
+    width: 83px;
+    aspect-ratio: 1.04;
+    object-fit: contain;
+  }
+  
+  .navigation {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    font: 400 24px Calibri, sans-serif;
+  }
+  
+  .navButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+  }
+  
+  .templeTitle {
+    color: #000;
+    text-align: center;
+    margin: 44px 0 0;
+    font: 700 34px Lato, sans-serif;
+  }
+  
+  .mainImage {
+    width: 100%;
+    max-width: 1100px;
+    margin: 71px 0 0;
+    border-radius: 20px;
+    aspect-ratio: 2.44;
+    object-fit: contain;
+  }
+  
+  .eventsTitle {
+    color: #000;
+    margin: 88px 0 0;
+    font: 800 44px Inter, sans-serif;
+  }
+  
+  .eventsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1340px;
+    margin: 86px 0;
+    padding: 0 20px;
+  }
+  
+  .eventCard {
+    display: flex;
+    flex-direction: column;
+    border-radius: 39px;
+    position: relative;
+    aspect-ratio: 1.35;
+  }
+  
+  .eventImage {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 39px;
+  }
+  
+  .eventTitle {
+    position: relative;
+    margin-top: auto;
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 39px 39px;
+    border: 2px solid #000;
+    font: 400 36px Inter, sans-serif;
+  }
+  
+  .footer {
+    background: #fff;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 24px 50px 72px;
+  }
+  
+  .footerSection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .footerTitle {
+    font: 400 48px Inter, sans-serif;
+    color: #000;
+  }
+  
+  .socialIcons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .socialIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .contactRow {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .contactIcon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .contactText {
+    font: 200 28px Inter, sans-serif;
+  }
+  
+  .footerText {
+    font: 200 28px Inter, sans-serif;
+    color: #000;
+    margin: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .header {
+      padding-right: 20px;
+    }
+  
+    .templeTitle {
+      margin-top: 40px;
+    }
+  
+    .mainImage {
+      margin-top: 40px;
+    }
+  
+    .eventsTitle {
+      margin-top: 40px;
+    }
+  
+    .eventsGrid {
+      grid-template-columns: 1fr;
+      margin-top: 40px;
+    }
+  
+    .footer {
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+  
+    .footerTitle {
+      font-size: 40px;
+    }
+  }

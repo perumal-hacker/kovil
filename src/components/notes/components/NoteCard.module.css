@@ -1,0 +1,65 @@
+.noteCardContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .noteContent {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 6px 9px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+    aspect-ratio: 1.175;
+    padding-top: 18px;
+  }
+  
+  .backgroundImage {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+  }
+  
+  .titleWrapper {
+    position: relative;
+    margin-left: 33px;
+    width: 110px;
+  }
+  
+  .noteTitle {
+    font: 36px Inter, sans-serif;
+  }
+  
+  .divider {
+    margin-top: 24px;
+    height: 1px;
+    border: 1px solid #000;
+  }
+  
+  .noteText {
+    position: relative;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-top: 137px;
+    padding: 15px 9px 32px;
+    font: 15px Arial, sans-serif;
+  }
+  
+  .noteDate {
+    align-self: center;
+    margin-top: 21px;
+    font: 29px Inter, sans-serif;
+  }
+  
+  @media (max-width: 991px) {
+    .titleWrapper {
+      margin-left: 10px;
+    }
+  
+    .noteText {
+      margin-top: 40px;
+    }
+  }

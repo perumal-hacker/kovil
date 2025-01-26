@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #f4c589;
+  transition: width 0.3s ease-in-out;
+  height: 100%;
+  overflow: hidden;
+}
+
+.collapsed {
+  width: 60px;
+}
+
+.expanded {
+  width: 15%;
+}
+
+.menuIcon {
+  font-size: 30px;
+  margin: 10px;
+  cursor: pointer;
+  color: black;
+  margin-left: 18px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navItem:hover {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  transition: 0.9s;
+  -webkit-box-shadow: -8px -7px 15px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -8px -7px 15px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: -8px -7px 15px -7px rgba(0, 0, 0, 0.75);
+}
+
+.icon {
+  margin-right: 10px;
+  margin-left: 8px;
+  font-size: 24px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  width: 100%;
+}
+
+.navLink:hover {
+  color: #333;
+}
+
+.contentArea {
+  width: 80%;
+  padding: 20px;
+}
+
+/* Add styles for the logout section */
+.logoutContainer {
+  margin-top: auto; /* Push the logout button to the bottom */
+  padding: 10px;
+  
+}
+
+.logoutButton {
+  background-color: #ff5c5c; /* Red background for logout */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.logoutButton:hover {
+  background-color: #e04f4f;
+}
+
+.logoutButton .icon {
+  /* Space between icon and text */
+  margin-left: -7px;
+}

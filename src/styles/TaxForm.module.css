@@ -1,0 +1,171 @@
+/* General Form Container */
+.Form_container {
+  border-radius: 25px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 50px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+}
+.error-message {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.Form_header{
+  
+  font-size: 50px;
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/* Form Wrapper */
+.Form_formWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+}
+
+/* Input Wrapper */
+.Form_inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative; /* For animations and error messages */
+}
+
+/* Labels */
+.Form_sectionTitle {
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Input Fields */
+.Form_inputField {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  height: 45px;
+  padding: 0 12px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Focus State */
+.Form_inputField:focus {
+  outline: none;
+}
+
+/* Valid Input - Green Border and Glow */
+.Form_inputField.valid {
+  border-color: #4caf50; /* Green border */
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Green glow */
+}
+
+/* Invalid Input - Red Border and Glow */
+.Form_inputField.invalid {
+  border-color: #f44336; /* Red border */
+  box-shadow: 0 0 8px rgba(244, 67, 54, 0.5); /* Red glow */
+  animation: shake 0.3s ease-in-out; /* Shake animation for invalid inputs */
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+}
+
+/* Error Message */
+.error-message {
+  color: #f44336;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 5px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Textarea Styles */
+textarea.Form_inputField {
+  resize: none;
+  height: auto;
+  min-height: 80px;
+  padding: 12px;
+}
+
+/* Button Group */
+.Form_buttonGroup {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Action Buttons */
+.Form_actionButton {
+  border-radius: 25px;
+  background-color: #ffda85;
+  padding: 12px 24px;
+  border: 1px solid #333;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.Form_actionButton:hover {
+  background-color: #ffc966;
+  transform: scale(1.05);
+}
+
+.Form_actionButton:active {
+  background-color: #ffaa33;
+  transform: scale(1);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .Form_container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .Form_sectionTitle {
+    font-size: 14px;
+  }
+
+  .Form_inputField {
+    height: 40px;
+    font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .Form_actionButton {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

@@ -1,0 +1,52 @@
+.container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+
+.adminControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.addEmployee {
+  background-color: #FFDBAA;
+  border: 2px solid black;
+  padding: 10px 15px;
+  border-radius: 15px;
+  color: #000000;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.addEmployee:hover {
+  background-color: #e7a451;
+}
+
+.employeeList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
